@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <header>
+        <h1><i class="fa-solid fa-list-check"></i> Task Manager</h1>
+        <p>Manage your daily tasks efficiently</p>
+    </header>
+
+    <!-- Statistics -->
+    <section class="stats">
+
+        <div class="card">
+            <h2 id="totalTasks">0</h2>
+            <p>Total Tasks</p>
+        </div>
+
+        <div class="card completed">
+            <h2 id="completedTasks">0</h2>
+            <p>Completed</p>
+        </div>
+
+        <div class="card pending">
+            <h2 id="pendingTasks">0</h2>
+            <p>Pending</p>
+        </div>
+
+    </section>
+
+    <!-- Add Task -->
+    <section class="add-task">
+
+        <input
+            type="text"
+            id="taskInput"
+            placeholder="Enter a new task">
+
+        <button onclick="addTask()">
+            <i class="fa-solid fa-plus"></i>
+            Add Task
+        </button>
+
+    </section>
+
+    <!-- Search & Filter -->
+    <section class="controls">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search task..."
+            onkeyup="searchTask()">
+
+        <select id="filter" onchange="filterTasks()">
+            <option value="all">All Tasks</option>
+            <option value="completed">Completed</option>
+            <option value="pending">Pending</option>
+        </select>
+
+    </section>
+
+    <!-- Task List -->
+    <section>
+
+        <ul id="taskList">
+
+        </ul>
+
+    </section>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
